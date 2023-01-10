@@ -1,0 +1,83 @@
+{
+    "name": "onramplab/laravel-clean-architecture",
+    "description": "An composer template",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "hexagonal architecture",
+        "ddd",
+        "use case"
+    ],
+    "authors": [
+        {
+            "name": "Onramplab",
+            "email": "dev@onramplab.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=7.4"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.5",
+        "nunomaduro/phpinsights": "^2.6",
+        "onramplab/onr-phpcs-laravel": "^1.2",
+        "phpmd/phpmd": "^2.13",
+        "phpstan/phpstan": "^1.9",
+        "phpunit/phpunit": "^9.5",
+        "rector/rector": "^0.15.3",
+        "sempro/phpunit-pretty-print": "^1.4",
+        "spatie/phpunit-watcher": "^1.23",
+        "squizlabs/php_codesniffer": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Onramplab\\CleanArchitecture\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.0-dev"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "symfony/flex": true
+        }
+    },
+    "scripts": {
+        "test": [
+            "@php vendor/bin/phpunit"
+        ],
+        "test:watch": [
+            "Composer\\Config::disableProcessTimeout",
+            "phpunit-watcher watch --filter NoneTest < /dev/tty"
+        ],
+        "psr2check": [
+            "@php vendor/bin/phpcs --standard=PSR2 src/"
+        ],
+        "psr2autofix": [
+            "@php vendor/bin/phpcbf --standard=PSR2 src/"
+        ],
+        "docs": [
+            "@php tools/phpDocumentor"
+        ],
+        "insights": [
+            "@php vendor/bin/phpinsights --no-interaction"
+        ],
+        "insights:fix": [
+            "@php vendor/bin/phpinsights --no-interaction --fix"
+        ],
+        "dependencies:check": [
+            "phpmd src text rulesets.xml"
+        ],
+        "rector": [
+            "vendor/bin/rector process src --dry-run"
+        ],
+        "rector:fix": [
+            "vendor/bin/rector process src"
+        ]
+    }
+}

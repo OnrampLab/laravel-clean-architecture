@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  php:
+    build: .
+    environment:
+      PHP_EXTENSION_INTL: 1
+    volumes:
+      - ./:/var/www/html
+
+networks:
+  default:
+      driver:
+          bridge
+      ipam:
+        config:
+        - subnet: "${DOCKER_SUBNET:-172.35.0.0/24}"
