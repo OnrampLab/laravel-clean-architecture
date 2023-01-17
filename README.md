@@ -11,6 +11,18 @@ If you are trying to create a new PHP Composer package, whether it is going to b
 - PHP >= 7.4;
 - composer.
 
+## Exception Architecture for clean architecture
+
+- `GeneralException`
+  - Domain Layer
+    - `DomainException`
+    - `CustomDomainException`
+  - Application Layer
+    - `UseCaseException`
+    - `InternalServerException`
+  - Adapter Layer
+    - Low level exception
+
 ## Tech Features
 
 - PSR-4 autoloading compliant structure;
