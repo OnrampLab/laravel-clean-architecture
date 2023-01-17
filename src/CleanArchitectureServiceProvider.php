@@ -11,6 +11,7 @@ class CleanArchitectureServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
+        $this->app->singleton('use-case', static fn () => new UseCasePerformer());
     }
 
     /**
