@@ -20,7 +20,7 @@ class UseCase extends Data
 
         try {
             try {
-                $useCase = static::from($args);
+                $useCase = static::validateAndCreate($args);
 
                 /** @phpstan-ignore-next-line  */
                 return UseCaseFacade::perform($useCase);
