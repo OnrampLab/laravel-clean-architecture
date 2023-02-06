@@ -21,7 +21,7 @@
         "illuminate/http": "^8.0.0",
         "onramplab/laravel-exceptions": "^1.0",
         "spatie/laravel-data": "^2.0",
-        "symfony/http-kernel": "^5.4"
+        "symfony/http-kernel": "^5.0"
     },
     "require-dev": {
         "mockery/mockery": "^1.5",
