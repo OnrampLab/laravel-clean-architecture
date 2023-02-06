@@ -66,6 +66,7 @@ class HandlerTest extends TestCase
                     [
                         'title' => "Unknown Error",
                         'detail' => "An Exception",
+                        'message' => "An Exception",
                         'status' => 500,
                     ],
                 ],
@@ -102,6 +103,7 @@ class HandlerTest extends TestCase
                     [
                         'title' => "Resource Not Found",
                         'detail' => "An Model Not Found Exception",
+                        'message' => "An Model Not Found Exception",
                         'status' => 404,
                     ],
                 ],
@@ -137,6 +139,7 @@ class HandlerTest extends TestCase
                     [
                         'title' => "Invalid Attribute",
                         'detail' => "cannot found setting id: 1 with campaign id: 2",
+                        'message' => "cannot found setting id: 1 with campaign id: 2",
                         'status' => 422,
                     ],
                 ],
@@ -176,6 +179,7 @@ class HandlerTest extends TestCase
                     [
                         'title' => "Fake Domain Exception",
                         'detail' => "A fake message",
+                        'message' => "A fake message",
                         'status' => 400,
                     ],
                 ],
