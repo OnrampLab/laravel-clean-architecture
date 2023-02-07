@@ -62,6 +62,7 @@ class HandlerTest extends TestCase
         $this->getJson('test-route')
             ->assertStatus(500)
             ->assertExactJson([
+                'message' => 'An Exception',
                 'errors' => [
                     [
                         'title' => "Unknown Error",
@@ -99,6 +100,7 @@ class HandlerTest extends TestCase
         $this->getJson('test-route')
             ->assertStatus(404)
             ->assertExactJson([
+                'message' => 'An Model Not Found Exception',
                 'errors' => [
                     [
                         'title' => "Resource Not Found",
@@ -135,6 +137,7 @@ class HandlerTest extends TestCase
         $this->getJson('test-route')
             ->assertStatus(422)
             ->assertExactJson([
+                'message' => 'The given data was invalid.',
                 'errors' => [
                     [
                         'title' => "Invalid Attribute",
@@ -175,6 +178,7 @@ class HandlerTest extends TestCase
         $this->getJson('test-route')
             ->assertStatus(400)
             ->assertExactJson([
+                'message' => 'A fake message',
                 'errors' => [
                     [
                         'title' => "Fake Domain Exception",
