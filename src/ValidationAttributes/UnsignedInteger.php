@@ -14,7 +14,7 @@ class UnsignedInteger extends ValidationRule
     {
         return [
             new IntegerType(),
-            new Min(1),
+            new Min(0),
         ];
     }
 }
