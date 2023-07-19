@@ -40,8 +40,8 @@ class UnsignedIntegerTest extends TestCase
         return [
             ['-1', true],
             [-1, true],
-            ['0', true],
-            [0, true],
+            ['0', false],
+            [0, false],
             ['1', false],
             [1, false],
         ];
