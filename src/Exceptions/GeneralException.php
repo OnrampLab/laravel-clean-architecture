@@ -17,7 +17,7 @@ abstract class GeneralException extends Exception implements ApplicationExceptio
     protected array $context = [];
 
     /**
-     * @param array<string, mixed> $context
+     * @param  array<string, mixed>  $context
      */
     public function __construct(
         string $message,
@@ -34,7 +34,7 @@ abstract class GeneralException extends Exception implements ApplicationExceptio
 
     public function getDetail(): string
     {
-        if ($this->getPrevious() !== null) {
+        if (! is_null($this->getPrevious())) {
             return $this->getPrevious()->getMessage();
         }
 
