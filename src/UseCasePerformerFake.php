@@ -68,6 +68,13 @@ class UseCasePerformerFake
         );
     }
 
+    public function assertNotPerformed(string $command, callable|null $callback = null): void
+    {
+        PHPUnit::assertFalse(
+            $this->performed($command, $callback)
+        );
+    }
+
     protected function performed(string $command, callable|null $callback): bool
     {
         $performedUseCase = data_get($this->map, $command);
