@@ -61,6 +61,15 @@ class UseCaseTest extends TestCase
     /**
      * @test
      */
+    public function performNotExecutionByFakingFacade()
+    {
+        UseCaseFacade::fake();
+        UseCaseFacade::assertNotPerformed(DoSomethingUseCase::class);
+    }
+
+    /**
+     * @test
+     */
     public function performShouldRethrowUseCaseExceptionWhenCatchingGeneralException()
     {
         UseCaseFacade::fake();
