@@ -29,7 +29,6 @@ class UseCase extends Data
             } catch (Throwable $e) {
                 throw new InternalServerException(
                     $e->getMessage(),
-                    /** @phpstan-ignore-next-line  */
                     is_null($useCase) ? [] : $useCase->toArray(),
                     Response::HTTP_INTERNAL_SERVER_ERROR,
                     $e
