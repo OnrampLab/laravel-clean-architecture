@@ -121,10 +121,10 @@ class UseCaseTest extends TestCase
             $validationException = $internalServerException->getPrevious();
 
             $this->assertEquals('Unable To Do Something', $e->getTitle());
-            $this->assertEquals('The given data was invalid.', $e->getDetail());
+            $this->assertEquals('The value field must be at least 0.', $e->getDetail());
             $this->assertEquals('Unknown Error', $internalServerException->getTitle());
-            $this->assertEquals('The given data was invalid.', $internalServerException->getDetail());
-            $this->assertEquals('The given data was invalid.', $validationException->getMessage());
+            $this->assertEquals('The value field must be at least 0.', $internalServerException->getDetail());
+            $this->assertEquals('The value field must be at least 0.', $validationException->getMessage());
         }
     }
 
