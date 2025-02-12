@@ -35,7 +35,7 @@ class UnsignedIntegerTest extends TestCase
         $this->assertEquals($value, $object->value);
     }
 
-    private function dataProvider()
+    public static function dataProvider()
     {
         return [
             ['-1', true],
