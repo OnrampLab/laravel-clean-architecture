@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Core\Domain\ValueObjects;
+namespace OnrampLab\CleanArchitecture\Domain\ValueObjects;
 
 use InvalidArgumentException;
 use JsonSerializable;
