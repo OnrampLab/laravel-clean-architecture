@@ -73,7 +73,9 @@ class UseCaseTest extends TestCase
     public function performShouldRethrowUseCaseExceptionWhenCatchingGeneralException()
     {
         UseCaseFacade::fake();
-        UseCaseFacade::shouldPerform(DoSomethingUseCase::class)
+        UseCaseFacade::shouldPerform(DoSomethingUseCase::class, function($command) {
+            return $command == ['value' => 1];
+        })
             ->once()
             ->andThrow(new FakeGeneralException('Error message'));
 
