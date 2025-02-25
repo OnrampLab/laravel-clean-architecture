@@ -55,8 +55,15 @@ class UseCasePerformerFake
         $mock = Mockery::mock(UseCasePerformer::class);
 
         $this->useCasesToFake[$command] = $mock;
+        $expectation = $mock->shouldReceive('perform');
 
-        return $mock->shouldReceive('perform');
+        if (! $callback) {
+            return $expectation;
+        }
+
+        return $expectation->withArgs(function($useCase) use ($callback) {
+            return $callback($useCase->toArray());
+        });
     }
 
     /**
