@@ -1,12 +1,13 @@
 <?php
 
-namespace OnrampLab\CleanArchitecture;
+namespace OnrampLab\CleanArchitecture\Infrastructure;
 
 use Illuminate\Support\Arr;
 use Mockery;
 use Mockery\ExpectationInterface;
 use Mockery\HigherOrderMessage;
 use Mockery\MockInterface;
+use OnrampLab\CleanArchitecture\Application\UseCase;
 use PHPUnit\Framework\Assert as PHPUnit;
 
 class UseCasePerformerFake

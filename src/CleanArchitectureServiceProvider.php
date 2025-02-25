@@ -3,6 +3,7 @@
 namespace OnrampLab\CleanArchitecture;
 
 use Illuminate\Support\ServiceProvider;
+use OnrampLab\CleanArchitecture\Infrastructure\UseCasePerformer;
 
 class CleanArchitectureServiceProvider extends ServiceProvider
 {
