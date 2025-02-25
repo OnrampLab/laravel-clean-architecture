@@ -7,8 +7,8 @@ use OnrampLab\CleanArchitecture\Infrastructure\UseCasePerformerFake;
 
 /**
  * @method static void perform(\OnrampLab\CleanArchitecture\UseCase $useCase)
- * @method static void shouldPerform(string|\Closure $command)
- * @method static void assertPerformed(string|\Closure $command, callable|int $callback = null)
+ * @method static void shouldPerform(string,null|\Closure $closure)
+ * @method static void assertPerformed(string|\Closure $closure, callable|int $callback = null)
  */
 class UseCaseFacade extends Facade
 {
