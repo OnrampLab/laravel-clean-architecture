@@ -3,7 +3,7 @@
 namespace OnrampLab\CleanArchitecture\Facades;
 
 use Illuminate\Support\Facades\Facade;
-use OnrampLab\CleanArchitecture\UseCasePerformerFake;
+use OnrampLab\CleanArchitecture\Infrastructure\UseCasePerformerFake;
 
 /**
  * @method static void perform(\OnrampLab\CleanArchitecture\UseCase $useCase)

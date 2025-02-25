@@ -1,12 +1,12 @@
 <?php
 
-namespace OnrampLab\CleanArchitecture\Tests\Unit;
+namespace OnrampLab\CleanArchitecture\Tests\Unit\Application;
 
 use Exception;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use OnrampLab\CleanArchitecture\Application\UseCase;
 use OnrampLab\CleanArchitecture\Exceptions\UseCaseException;
 use OnrampLab\CleanArchitecture\Facades\UseCaseFacade;
-use OnrampLab\CleanArchitecture\UseCase;
 use OnrampLab\CleanArchitecture\Tests\TestCase;
 use OnrampLab\CleanArchitecture\Tests\Unit\Exceptions\FakeGeneralException;
 use OnrampLab\CleanArchitecture\ValidationAttributes\UnsignedInteger;
