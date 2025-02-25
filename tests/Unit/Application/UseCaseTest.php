@@ -1,12 +1,12 @@
 <?php
 
-namespace OnrampLab\CleanArchitecture\Tests\Unit;
+namespace OnrampLab\CleanArchitecture\Tests\Unit\Application;
 
 use Exception;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use OnrampLab\CleanArchitecture\Application\UseCase;
 use OnrampLab\CleanArchitecture\Exceptions\UseCaseException;
 use OnrampLab\CleanArchitecture\Facades\UseCaseFacade;
-use OnrampLab\CleanArchitecture\UseCase;
 use OnrampLab\CleanArchitecture\Tests\TestCase;
 use OnrampLab\CleanArchitecture\Tests\Unit\Exceptions\FakeGeneralException;
 use OnrampLab\CleanArchitecture\ValidationAttributes\UnsignedInteger;
@@ -121,10 +121,10 @@ class UseCaseTest extends TestCase
             $validationException = $internalServerException->getPrevious();
 
             $this->assertEquals('Unable To Do Something', $e->getTitle());
-            $this->assertEquals('The given data was invalid.', $e->getDetail());
+            $this->assertEquals('The value field must be at least 0.', $e->getDetail());
             $this->assertEquals('Unknown Error', $internalServerException->getTitle());
-            $this->assertEquals('The given data was invalid.', $internalServerException->getDetail());
-            $this->assertEquals('The given data was invalid.', $validationException->getMessage());
+            $this->assertEquals('The value field must be at least 0.', $internalServerException->getDetail());
+            $this->assertEquals('The value field must be at least 0.', $validationException->getMessage());
         }
     }
 

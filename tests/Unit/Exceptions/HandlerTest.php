@@ -137,7 +137,7 @@ class HandlerTest extends TestCase
         $this->getJson('test-route')
             ->assertStatus(422)
             ->assertExactJson([
-                'message' => 'The given data was invalid.',
+                'message' => 'cannot found setting id: 1 with campaign id: 2',
                 'errors' => [
                     [
                         'title' => "Invalid Attribute",
