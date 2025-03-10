@@ -42,6 +42,11 @@ final readonly class ID implements Stringable, JsonSerializable
         return new self($value);
     }
 
+    public function getValue(): string|int
+    {
+        return $this->value;
+    }
+
     public function jsonSerialize(): mixed
     {
         return $this->value;
