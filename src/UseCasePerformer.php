@@ -1,8 +1,6 @@
 <?php
 
-namespace OnrampLab\CleanArchitecture\Infrastructure;
-
-use OnrampLab\CleanArchitecture\Application\UseCase;
+namespace OnrampLab\CleanArchitecture;
 
 class UseCasePerformer
 {

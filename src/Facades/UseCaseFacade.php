@@ -3,12 +3,12 @@
 namespace OnrampLab\CleanArchitecture\Facades;
 
 use Illuminate\Support\Facades\Facade;
-use OnrampLab\CleanArchitecture\Infrastructure\UseCasePerformerFake;
+use OnrampLab\CleanArchitecture\UseCasePerformerFake;
 
 /**
  * @method static void perform(\OnrampLab\CleanArchitecture\UseCase $useCase)
- * @method static \Mockery\ExpectationInterface|\Mockery\HigherOrderMessage shouldPerform(string,null|\Closure $closure = null)
- * @method static void assertPerformed(string|\Closure $closure, callable|int $callback = null)
+ * @method static void shouldPerform(string|\Closure $command)
+ * @method static void assertPerformed(string|\Closure $command, callable|int $callback = null)
  */
 class UseCaseFacade extends Facade
 {

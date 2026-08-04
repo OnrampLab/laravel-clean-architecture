@@ -1,13 +1,12 @@
 <?php
 
-namespace OnrampLab\CleanArchitecture\Infrastructure;
+namespace OnrampLab\CleanArchitecture;
 
 use Illuminate\Support\Arr;
 use Mockery;
 use Mockery\ExpectationInterface;
 use Mockery\HigherOrderMessage;
 use Mockery\MockInterface;
-use OnrampLab\CleanArchitecture\Application\UseCase;
 use PHPUnit\Framework\Assert as PHPUnit;
 
 class UseCasePerformerFake
@@ -55,15 +54,8 @@ class UseCasePerformerFake
         $mock = Mockery::mock(UseCasePerformer::class);
 
         $this->useCasesToFake[$command] = $mock;
-        $expectation = $mock->shouldReceive('perform');
 
-        if (! $callback) {
-            return $expectation;
-        }
-
-        return $expectation->withArgs(function($useCase) use ($callback) {
-            return $callback($useCase->toArray());
-        });
+        return $mock->shouldReceive('perform');
     }
 
     /**
@@ -72,13 +64,6 @@ class UseCasePerformerFake
     public function assertPerformed(string $command, callable|null $callback = null): void
     {
         PHPUnit::assertTrue(
-            $this->performed($command, $callback)
-        );
-    }
-
-    public function assertNotPerformed(string $command, callable|null $callback = null): void
-    {
-        PHPUnit::assertFalse(
             $this->performed($command, $callback)
         );
     }
