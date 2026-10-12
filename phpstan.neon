@@ -8,8 +8,15 @@ parameters:
     # The level 8 is the highest level
     level: 8
 
-    # ignoreErrors:
-    #    - '#Unsafe usage of new static#'
+    ignoreErrors:
+        -
+            message: "#^PHPDoc tag @method has invalid value#"
+            path: src/Facades/UseCaseFacade.php
+            count: 1
+        -
+            message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Container\\\\Container\\:\\:call\\(\\) expects#"
+            path: src/Infrastructure/UseCasePerformer.php
+            count: 1
 
     excludePaths:
         - ./*/*/Tests/*.php
