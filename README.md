@@ -8,7 +8,7 @@ Package to simply setup a Clean Architecture Application in Laravel.
 
 ## Requirements
 
-- PHP >= 7.4;
+- PHP >= 8.3;
 - composer.
 
 ## Installation

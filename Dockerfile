@@ -1,4 +1,4 @@
-FROM thecodingmachine/php:8.2-v4-apache
+FROM thecodingmachine/php:8.3-v4-apache
 
 USER root
 

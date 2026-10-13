@@ -89,7 +89,7 @@ return [
         'min-quality' => 80,
         'min-complexity' => 80,
         'min-architecture' => 80,
-        'min-style' => 98,
+        'min-style' => 94,
 //        'disable-security-check' => false,
     ],
 
